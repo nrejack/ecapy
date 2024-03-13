@@ -9,7 +9,7 @@ starting from a fixed inital state.
 `python3 ecapybara.py`
 
 
-You will be prompte to select one of the rules from 0-255, and the number of steps you would like to iterate. Output will be scaled to fit the number of columns in your terminal window with some padding.
+You will be prompted to select one of the rules from 0-255, and the number of steps you would like to iterate. Output will be scaled to fit the number of columns in your terminal window with some padding.
 
 ## TODO
 - Larger number of steps doesn't generate expected output.

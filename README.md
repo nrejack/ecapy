@@ -1,8 +1,8 @@
 # ecapybara
-ecapybara, Elementary Cellular Automata for PYthon
+ecapybara, Elementary Cellular Automata for PYthon + BARA
 
 Iterate the 256 [elementary cellular automata](https://en.wikipedia.org/wiki/Elementary_cellular_automaton)
-starting from a fixed inital state.
+starting from a fixed inital state (center cell 'live', all others 'dead').
 
 ## Usage
 

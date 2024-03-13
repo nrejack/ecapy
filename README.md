@@ -1,7 +1,7 @@
 # ecapybara
 ecapybara, Elementary Cellular Automata for PYthon
 
-Iterate the 256 (elementary cellular automata)[https://en.wikipedia.org/wiki/Elementary_cellular_automaton]
+Iterate the 256 [elementary cellular automata](https://en.wikipedia.org/wiki/Elementary_cellular_automaton)
 starting from a fixed inital state.
 
 ## Usage

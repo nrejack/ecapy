@@ -16,9 +16,9 @@ You will be prompted to select one of the rules from 0-255, and the number of st
 
 Run locally as an API with results displayed in the browser. Non-public/non-production uses ONLY.
 
-`python3 -m venv venv
- . venv/bin/activate
- pip install -U pip flask
+`python3 -m venv venv  
+ . venv/bin/activate  
+ pip install -U pip flask  
  flask --app eca_server run`
 
  Open a browser on the machine and navigate to http://localhost:1313. 

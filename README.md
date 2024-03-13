@@ -12,3 +12,5 @@ You will be prompte to select one of the rules from 0-255. Output will be scaled
 
 ## Mascot
 The official mascot of ecapybara is the e-capybara.
+
+![e-capybara, our mascot](img/capy.jpg)

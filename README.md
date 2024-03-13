@@ -1,15 +1,15 @@
 # ecapybara
-ecapybara, Elementary Cellular Automata for PYthon
+ecapybara, Elementary Cellular Automata for PYthon + BARA
 
 Iterate the 256 [elementary cellular automata](https://en.wikipedia.org/wiki/Elementary_cellular_automaton)
-starting from a fixed inital state.
+starting from a fixed inital state (center cell 'live', all others 'dead').
 
 ## Usage
 
 `python3 ecapybara.py`
 
 
-You will be prompte to select one of the rules from 0-255, and the number of steps you would like to iterate. Output will be scaled to fit the number of columns in your terminal window with some padding.
+You will be prompted to select one of the rules from 0-255, and the number of steps you would like to iterate. Output will be scaled to fit the number of columns in your terminal window with some padding.
 
 ## TODO
 - Larger number of steps doesn't generate expected output.

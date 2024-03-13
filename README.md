@@ -6,7 +6,8 @@ starting from a fixed inital state.
 
 ## Usage
 
-python3 ecapybara.py
+`python3 ecapybara.py`
+
 
 You will be prompte to select one of the rules from 0-255, and the number of steps you would like to iterate. Output will be scaled to fit the number of columns in your terminal window with some padding.
 

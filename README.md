@@ -17,6 +17,8 @@ You will be prompted to select one of the rules from 0-255, and the number of st
 Run locally as an API with results displayed in the browser. Non-public/non-production uses ONLY.
 
 ```
+git clone git@github.com:nrejack/ecapybara.git
+cd ecapybara
 python3 -m venv venv  
 . venv/bin/activate  
 pip install -U pip flask  

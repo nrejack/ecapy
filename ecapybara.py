@@ -46,6 +46,13 @@ def textmode(binary_string):
     return binary_string
 
 
+def webtextmode(binary_string):
+    # format a 'binary string' into a web-printable text representation
+    binary_string = binary_string.replace("1", "█")
+    binary_string = binary_string.replace("0", "&nbsp;")
+    return binary_string + "<br />"
+
+
 def main():
     import shutil
     import logging

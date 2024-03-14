@@ -16,16 +16,18 @@ You will be prompted to select one of the rules from 0-255, and the number of st
 
 Run locally as an API with results displayed in the browser. Non-public/non-production uses ONLY.
 
-`python3 -m venv venv  
- . venv/bin/activate  
- pip install -U pip flask  
- flask --app eca_server run`
+```
+git clone git@github.com:nrejack/ecapybara.git
+cd ecapybara
+python3 -m venv venv  
+. venv/bin/activate  
+pip install -U pip flask  
+flask --app eca_server run
+```
 
- Open a browser on the machine and navigate to http://localhost:1313. 
- Select a rule (0 - 255) and number of iterations (maximum 1000), and access:
- http://localhost:1313/30/500/ to see the output in your browser.
-
- Example: (https://localhost:1313/30/500/)
+ Open a browser on the machine and navigate to http://localhost:5000. 
+ Select a *rule* (0 - 255) and *number of iterations* (maximum 1000), and access http://localhost:5000/rule/iterations/ in your browser.
+ Example: Rule 30, 500 iterations: http://localhost:5000/30/500/ 
 
 
 ## Sample output
@@ -38,6 +40,8 @@ Run locally as an API with results displayed in the browser. Non-public/non-prod
 - Needs click interface for CLI.
 - Needs to write images using PILlow.
 - Logging needs work.
+- Add streaming/WebSockets output from API
+- COLORIZE!
 
 ## Mascot
 The official mascot of ecapybara is the e-capybara.

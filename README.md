@@ -25,11 +25,9 @@ pip install -U pip flask
 flask --app eca_server run
 ```
 
- Open a browser on the machine and navigate to http://localhost:1313. 
+ Open a browser on the machine and navigate to http://localhost:5000. 
  Select a rule (0 - 255) and number of iterations (maximum 1000), and access:
- http://localhost:1313/30/500/ to see the output in your browser.
-
- Example: (https://localhost:1313/30/500/)
+ http://localhost:5000/30/500/ to see the output in your browser.
 
 
 ## Sample output
@@ -42,6 +40,8 @@ flask --app eca_server run
 - Needs click interface for CLI.
 - Needs to write images using PILlow.
 - Logging needs work.
+- Add streaming/WebSockets output from API
+- COLORIZE!
 
 ## Mascot
 The official mascot of ecapybara is the e-capybara.

@@ -41,10 +41,10 @@ python3 -m venv venv
 pip install -U pip flask  
 flask run
 ```
- How to view:
- Open a browser on the machine and navigate to http://localhost:5000. 
- Select a *rule* (0 - 255) and *number of iterations* (maximum 1000), and access http://localhost:5000/rule/iterations/ in your browser.
- Example: Rule 30, 500 iterations: http://localhost:5000/30/500/ 
+### How to view API output
+Open a browser on the machine and navigate to http://localhost:5000. 
+Select a *rule* (0 - 255) and *number of iterations* (maximum 1000), and access http://localhost:5000/rule/iterations/ in your browser.
+Example: Rule 30, 500 iterations: http://localhost:5000/30/500/ 
 
 
 ## Sample output
@@ -57,8 +57,14 @@ flask run
 - Needs click interface for CLI.
 - Needs to write images using PILlow.
 - Logging needs work.
-- Add streaming/WebSockets output from API
-- COLORIZE!
+- Streaming from API not working
+- Needs some JS or other trickery to get browser window width
+- Add ability to scale fundamental elements
+- Add ability to 'page' back and forth between different rules in browser view
+- Programmatically generate visual representation of rules
+- Needs ability to start from randomized seed
+- COLORS !!!
+- Animation modes (fades, slow transitions)
 
 ## Mascot
 The official mascot of ecapybara is the e-capybara.

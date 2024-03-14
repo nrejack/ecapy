@@ -16,6 +16,19 @@ You will be prompted to select one of the rules from 0-255, and the number of st
 
 Run locally as an API with results displayed in the browser. Non-public/non-production uses ONLY.
 
+### Dockerfile method
+Must have Docker installed.
+
+```
+git clone git@github.com:nrejack/ecapybara.git
+cd ecapybara
+docker build -t nrejack/ecapybara:latest .
+docker run --rm --name ecapy -p 5000:5000 -d  nrejack/ecapybara:latest
+```
+Follow the "How to view" browser instructions below. Note that the container will be destroyed (--rm) when you stop it.
+
+### pip method
+
 ```
 git clone git@github.com:nrejack/ecapybara.git
 cd ecapybara
@@ -24,7 +37,7 @@ python3 -m venv venv
 pip install -U pip flask  
 flask --app eca_server run
 ```
-
+ How to view:
  Open a browser on the machine and navigate to http://localhost:5000. 
  Select a *rule* (0 - 255) and *number of iterations* (maximum 1000), and access http://localhost:5000/rule/iterations/ in your browser.
  Example: Rule 30, 500 iterations: http://localhost:5000/30/500/ 

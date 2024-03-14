@@ -16,8 +16,12 @@ You will be prompted to select one of the rules from 0-255, and the number of st
 
 Run locally as an API with results displayed in the browser. Non-public/non-production uses ONLY.
 
-### Dockerfile method
-Must have Docker installed.
+### Docker method
+```
+docker pull nrejack/ecapybara:latest
+docker run --rm --name ecapy -p 5000:5000 -d  nrejack/ecapybara:latest
+```
+or build locally:
 
 ```
 git clone git@github.com:nrejack/ecapybara.git

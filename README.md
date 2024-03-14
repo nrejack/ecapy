@@ -35,7 +35,7 @@ cd ecapybara
 python3 -m venv venv  
 . venv/bin/activate  
 pip install -U pip flask  
-flask --app eca_server run
+flask run
 ```
  How to view:
  Open a browser on the machine and navigate to http://localhost:5000. 

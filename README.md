@@ -43,8 +43,8 @@ flask run
 ```
 ### How to view API output
 Open a browser on the machine and navigate to http://localhost:5000. 
-Select a *rule* (0 - 255) and *number of iterations* (maximum 1000), and access http://localhost:5000/rule/iterations/ in your browser.
-Example: Rule 30, 500 iterations: http://localhost:5000/30/500/ 
+Select a *rule* (0 - 255) and *number of iterations* (maximum 1000), and access http://localhost:5000/rule/iterations/ in your browser.  
+**Example:** Rule 30, 500 iterations: http://localhost:5000/30/500/ 
 
 
 ## Sample output

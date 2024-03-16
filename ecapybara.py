@@ -48,8 +48,22 @@ def textmode(binary_string):
 
 def webtextmode(binary_string):
     # format a 'binary string' into a web-printable text representation
-    binary_string = binary_string.replace("1", "█")
-    binary_string = binary_string.replace("0", "&nbsp;")
+    #binary_string = binary_string.replace("1", "█")
+    #binary_string = binary_string.replace("0", "&nbsp;")
+    # crude way to get color scheme using complementary colors
+    import random
+    choice = random.random()
+    if choice >= 0 and choice <= .333:
+        colorA = "blue"
+        colorB = "orange"
+    elif choice > .333 and choice <= .666:
+        colorA = "red"
+        colorB = "green"
+    else:
+        colorA = "yellow"
+        colorB = "purple"
+    binary_string = binary_string.replace("1", f"<span color={colorA}>█</span>")
+    binary_string = binary_string.replace("0", f"<span color={colorB}>█</span>")
     return binary_string + "<br />"
 
 

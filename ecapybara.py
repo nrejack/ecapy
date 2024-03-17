@@ -51,7 +51,7 @@ def webtextmode(binary_string, colorA, colorB):
     # TODO: improve this by coalescing large runs of same color
     # TODO: use blocks or something else
     binary_string = binary_string.replace("1", f"<span style='color:{colorA}'>█</span>")
-    binary_string = binary_string.replace("0", f"<span style='color=:{colorB}'>█</span>")
+    binary_string = binary_string.replace("0", f"<span style='color:{colorB}'>█</span>")
     return binary_string + "<br />"
 
 

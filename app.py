@@ -13,7 +13,7 @@ def root_page():
 def get_initial_params(rule, itercount):
     rule = int(escape(rule))
     itercount = int(escape(itercount))
-    colors = getColors()
+    colors = get_colors()
     if rule < 0 or rule > 255:
         return "error: rule must be in range 0 - 255."
     elif itercount < 0 or itercount > 1000:
@@ -40,7 +40,9 @@ def get_colors():
         colorB = "purple"
     return (colorA, colorB)
 
-def eca_driver(width: int, rule: int, itercount: int, colorA, colorB):
+def eca_driver(width: int, rule: int, itercount: int, colors: set):
+    colorA = colors[0]
+    colorB = colors[1]
     rules = generate_rules()
     state = get_initial_state(width)
     output = '<pre style="display:inline-block; line-height: 1em;">'

@@ -10,9 +10,10 @@ def root_page():
 
 
 @app.get("/<int:rule>/<int:itercount>/")
-def get_initial_params(rule, itercount, colorA, colorB):
+def get_initial_params(rule, itercount):
     rule = int(escape(rule))
     itercount = int(escape(itercount))
+    colors = getColors()
     if rule < 0 or rule > 255:
         return "error: rule must be in range 0 - 255."
     elif itercount < 0 or itercount > 1000:
@@ -20,11 +21,24 @@ def get_initial_params(rule, itercount, colorA, colorB):
     else:
         # TODO width currently fixed at 180
         # js: window.innerWidth could get dynamic val
-        return eca_driver(180, rule, itercount, colorA, colorB)
+        return eca_driver(180, rule, itercount, colors)
 
-
+import random
 from ecapybara import generate_rules, get_initial_state, iterate_state, webtextmode
 
+def get_colors():
+    # TODO: make this class attributes
+    choice = random.random()
+    if choice >= 0 and choice <= .333:
+        colorA = "blue"
+        colorB = "orange"
+    elif choice > .333 and choice <= .666:
+        colorA = "red"
+        colorB = "green"
+    elif choice > .666 and choice <= 1.0:
+        colorA = "yellow"
+        colorB = "purple"
+    return (colorA, colorB)
 
 def eca_driver(width: int, rule: int, itercount: int, colorA, colorB):
     rules = generate_rules()

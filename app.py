@@ -10,7 +10,7 @@ def root_page():
 
 
 @app.get("/<int:rule>/<int:itercount>/")
-def get_initial_params(rule, itercount):
+def get_initial_params(rule, itercount, colorA, colorB):
     rule = int(escape(rule))
     itercount = int(escape(itercount))
     if rule < 0 or rule > 255:
@@ -20,19 +20,19 @@ def get_initial_params(rule, itercount):
     else:
         # TODO width currently fixed at 180
         # js: window.innerWidth could get dynamic val
-        return eca_driver(180, rule, itercount)
+        return eca_driver(180, rule, itercount, colorA, colorB)
 
 
 from ecapybara import generate_rules, get_initial_state, iterate_state, webtextmode
 
 
-def eca_driver(width: int, rule: int, itercount: int):
+def eca_driver(width: int, rule: int, itercount: int, colorA, colorB):
     rules = generate_rules()
     state = get_initial_state(width)
     output = '<pre style="display:inline-block; line-height: 1em;">'
     trule = rules[rule]
     for i in range(itercount):
-        output += webtextmode(state)
+        output += webtextmode(state, colorA, colorB)
         state = iterate_state(state, trule)
 
     return output + "</pre>"

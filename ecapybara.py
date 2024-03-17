@@ -46,24 +46,12 @@ def textmode(binary_string):
     return binary_string
 
 
-def webtextmode(binary_string):
+def webtextmode(binary_string, colorA, colorB):
     # format a 'binary string' into a web-printable text representation
-    #binary_string = binary_string.replace("1", "█")
-    #binary_string = binary_string.replace("0", "&nbsp;")
-    # crude way to get color scheme using complementary colors
-    import random
-    choice = random.random()
-    if choice >= 0 and choice <= .333:
-        colorA = "blue"
-        colorB = "orange"
-    elif choice > .333 and choice <= .666:
-        colorA = "red"
-        colorB = "green"
-    else:
-        colorA = "yellow"
-        colorB = "purple"
-    binary_string = binary_string.replace("1", f"<span color={colorA}>█</span>")
-    binary_string = binary_string.replace("0", f"<span color={colorB}>█</span>")
+    # TODO: improve this by coalescing large runs of same color
+    # TODO: use blocks or something else
+    binary_string = binary_string.replace("1", f"<span style='color:{colorA}'>█</span>")
+    binary_string = binary_string.replace("0", f"<span style='color=:{colorB}'>█</span>")
     return binary_string + "<br />"
 
 
@@ -90,7 +78,20 @@ def main():
         if rule_num < 0 or rule_num > 255:
             print("Error: you must enter an integer between 0 and 255.")
             rule_num = -1
-
+    
+    # TODO: make this class attributes
+    import random
+    choice = random.random()
+    if choice >= 0 and choice <= .333:
+        colorA = "blue"
+        colorB = "orange"
+    elif choice > .333 and choice <= .666:
+        colorA = "red"
+        colorB = "green"
+    elif choice > .666 and choice <= 1.0:
+        colorA = "yellow"
+        colorB = "purple"
+    
     trule = rules[rule_num]
     state = get_initial_state(width)
     # TODO: larger step numbers do not generate reliable output, fix

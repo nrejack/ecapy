@@ -1,6 +1,10 @@
 # ecapybara
 ecapybara, Elementary Cellular Automata for PYthon + BARA
 
+<a href="https://github.com/nrejack/ecapybara/actions/workflows/pylint.yml">
+  <img  alt="GitHubs Actions build status (Pylint)" 
+        src="https://github.com/python-pillow/Pillow/workflows/Lint/badge.svg"></a>
+                
 Iterate the 256 [elementary cellular automata](https://en.wikipedia.org/wiki/Elementary_cellular_automaton)
 starting from a fixed inital state (center cell 'live', all others 'dead').
 

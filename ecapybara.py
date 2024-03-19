@@ -1,12 +1,16 @@
 #!/usr/bin/env python3
-
-# cellular automata & Wolfram code
-
+"""
+Basic code for generating and iterating the elementary cellular automata.
+"""
+import logging
+import shutil
 
 def generate_rules():
-    # generate a dictionary of dictionaries indexed by Wolfram code
-    # within each code, 8 possibilities (base 10) for transformation
-    # based on group of 3 blocks
+    """
+    generate a dictionary of dictionaries indexed by Wolfram code
+    within each code, 8 possibilities (base 10) for transformation
+    based on group of 3 blocks.
+    """
     rules = {}
     for i in range(256):
         mapping = {}
@@ -18,7 +22,9 @@ def generate_rules():
 
 
 def get_initial_state(width):
-    # return block with only middle block in 1 state
+    """
+    return a block with only middle block in 1 state
+    """
     side_size = width // 2
     print(f"Side size set to: {side_size}")
     initial_state = "0" * side_size + "1" + "0" * side_size
@@ -27,7 +33,9 @@ def get_initial_state(width):
 
 
 def iterate_state(curr, rule):
-    # apply current rule to current state and return new state
+    """
+    apply current rule to current state and return new state
+    """
     new_state = ""
     width = len(curr)
     new_state += curr[0]
@@ -40,41 +48,46 @@ def iterate_state(curr, rule):
 
 
 def textmode(binary_string):
-    # format a 'binary string' into textmode for printing
+    """
+    format a 'binary string' into textmode for printing
+    """
     binary_string = binary_string.replace("1", "█")
     binary_string = binary_string.replace("0", " ")
     return binary_string
 
 
-def webtextmode(binary_string, colorA, colorB):
-    # format a 'binary string' into a web-printable text representation
-    # TODO: improve this by coalescing large runs of same color
-    # TODO: use blocks or something else
-    binary_string = binary_string.replace("1", f"<span style='color:{colorA}'>█</span>")
-    binary_string = binary_string.replace("0", f"<span style='color:{colorB}'>█</span>")
+def webtextmode(binary_string, color_a, color_b):
+    """
+    format a 'binary string' into a web-printable text representation
+    TODO: improve this by coalescing large runs of same color
+    TODO: use blocks or something else
+    """
+    binary_string = binary_string.replace("1", f"<span style='color:{color_a}'>█</span>")
+    binary_string = binary_string.replace("0", f"<span style='color:{color_b}'>█</span>")
     return binary_string + "<br />"
 
 
 def main():
-    import shutil
-    import logging
-
+    """
+    driver for console app.
+    """
     logging.basicConfig(level=logging.INFO)
     term_size = shutil.get_terminal_size()
     term_col = term_size.columns
-    logging.info(f"Terminal width (columns): {term_col}")
+    logging.info("Terminal width (columns): {%s}", term_col)
     width = term_col - 10
     if width % 2 == 0:
         width += 1
         logging.info("Added 1 to width to ensure seed is centered.")
     else:
         logging.info("Width is odd number of columns, not changing.")
-    logging.info(f"Setting universe width to {width}")
+    logging.info("Setting universe width to %s", width)
     rules = generate_rules()
     rule_num = -1
     while rule_num == -1:
         rule_num = input("Select a rule (0-255): ")
-        print(f"Entered: {str(rule_num)} Using value {str(rule_num := int(rule_num))}")
+        rule_num = str(int(rule_num))
+        logging.info("Entered: {%s}", rule_num)
         if rule_num < 0 or rule_num > 255:
             print("Error: you must enter an integer between 0 and 255.")
             rule_num = -1
@@ -93,7 +106,7 @@ def main():
         print(f"Entered {get_steps}, using value {steps}")
     print(f"Starting iteration ({steps} steps)\n")
     print(textmode(state))
-    for i in range(steps - 1):
+    for _ in range(steps - 1):
         state = iterate_state(state, trule)
         printable_state = textmode(state)
         print(printable_state)

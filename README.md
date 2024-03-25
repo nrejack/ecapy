@@ -11,7 +11,7 @@ starting from a fixed inital state (center cell 'live', all others 'dead').
 ## Usage
 
 ### Installed package
-`pip install ecapybara`
+`pip install ecapybara`  
 `python3 -m ecapybara.ecapydriver`
 
 You will be prompted to select one of the rules from 0-255, and the number of steps you would like to iterate. Output will be scaled to fit the number of columns in your terminal window with some padding.

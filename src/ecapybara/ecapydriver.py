@@ -1,3 +1,7 @@
+"""
+Simple application that drives ecapybara in the console.
+"""
+
 import logging
 import shutil
 from ecapybara.ecapyworld import Ecapyworld

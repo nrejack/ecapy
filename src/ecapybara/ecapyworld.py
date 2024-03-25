@@ -81,17 +81,17 @@ class Ecapyworld:
         return output
 
 
-    def webtextmode(self, binary_string, color_a, color_b):
-         """
-         format a 'binary string' into a web-printable text representation
-         TODO: improve this by coalescing large runs of same color
-         TODO: use blocks or something else
-         """
-         color_a_txt = f"<span style='color:{color_a}'>█</span>"
-         color_b_txt = f"<span style='color:{color_b}'>█</span>"
-         output = ''
-         for s in self.state:
+    def webtextmode(self, color_a, color_b):
+        """
+        format a 'state' into a web-printable text representation
+        TODO: improve this by coalescing large runs of same color
+        TODO: use blocks or something else
+        """
+        color_a_txt = f"<span style='color:{color_a}'>█</span>"
+        color_b_txt = f"<span style='color:{color_b}'>█</span>"
+        output = ''
+        for s in self.state:
             s = s.replace("1", color_a_txt)
             s = s.replace("0", color_b_txt)
             output += (s + "<br />")
-         return output
+        return output

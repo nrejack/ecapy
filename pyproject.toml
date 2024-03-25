@@ -22,3 +22,15 @@ Issues = "https://github.com/nrejack/ecapybara/issues"
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool]
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+    "/.github",
+    "/img",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ecapybara"]
+

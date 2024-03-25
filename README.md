@@ -10,6 +10,10 @@ starting from a fixed inital state (center cell 'live', all others 'dead').
 
 ## Usage
 
+### Installed package
+pip install ecapybara
+python3 -m ecapybara.ecapydriver
+
 ### Console mode
 `python3 src/ecapybara/ecapydriver.py`
 

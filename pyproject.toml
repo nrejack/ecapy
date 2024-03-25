@@ -1,5 +1,5 @@
 [project]
-name = "ECAPYbara"
+name = "ecapybara"
 version = "0.0.2"
 authors = [
     { name="Nicholas Rejack", email="nrejack@users.noreply.github.com"},

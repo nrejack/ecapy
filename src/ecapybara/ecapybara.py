@@ -1,5 +1,7 @@
-import logging
-import shutil
+"""
+ECAPYbara is an implementation of Elementary Cellular Automata for PYthon.
+Ecapybara is the classname.
+"""
 
 class Ecapybara:
     """
@@ -49,7 +51,7 @@ class Ecapybara:
         Get the entire historical state.
         """
         return self.state
-    
+
     def iterate_state(self, rule):
         """
         apply current rule to current state and return new state
@@ -64,7 +66,7 @@ class Ecapybara:
             new_state += rule[value]
         new_state += curr[width - 1]
         self.state.append(new_state)
-        
+
 
     def textmode(self):
         """
@@ -80,14 +82,14 @@ class Ecapybara:
         return output
 
 
-    def webtextmode(binary_string, color_a, color_b):
-        """
-        format a 'binary string' into a web-printable text representation
-        TODO: improve this by coalescing large runs of same color
-        TODO: use blocks or something else
-        """
-        color_a_txt = f"<span style='color:{color_a}'>█</span>"
-        color_b_txt = f"<span style='color:{color_b}'>█</span>"
-        binary_string = binary_string.replace("1", color_a_txt)
-        binary_string = binary_string.replace("0", color_b_txt)
-        return binary_string + "<br />"
+    # def webtextmode(self, binary_string, color_a, color_b):
+    #     """
+    #     format a 'binary string' into a web-printable text representation
+    #     TODO: improve this by coalescing large runs of same color
+    #     TODO: use blocks or something else
+    #     """
+    #     color_a_txt = f"<span style='color:{color_a}'>█</span>"
+    #     color_b_txt = f"<span style='color:{color_b}'>█</span>"
+    #     binary_string = binary_string.replace("1", color_a_txt)
+    #     binary_string = binary_string.replace("0", color_b_txt)
+    #     return binary_string + "<br />"

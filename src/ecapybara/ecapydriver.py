@@ -1,6 +1,6 @@
 import logging
 import shutil
-from ecapyworld import Ecapyworld
+from ecapybara.ecapyworld import Ecapyworld
 
 def main():
     """

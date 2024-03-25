@@ -11,7 +11,6 @@ class Ecapybara:
     def __init__(self, width):
         self.ruleset = self.generate_rules()
         self.set_initial_state(width)
-        print(self.state)
         print(f"Initialized ecapy object with width {width}")
 
     def generate_rules(self):
